@@ -1,0 +1,32 @@
+[
+  {
+    "id": "dominio1",
+    "nombre": "Matemáticas",
+    "descripcion": "Estudio de los números, las cantidades y el espacio.",
+    "idsAreasConocimiento": ["area001", "area002"]
+  },
+  {
+    "id": "dominio2",
+    "nombre": "Física",
+    "descripcion": "Ciencia que estudia las propiedades de la materia y la energía.",
+    "idsAreasConocimiento": ["area003", "area004"]
+  },
+  {
+    "id": "dominio3",
+    "nombre": "Historia",
+    "descripcion": "Estudio de los acontecimientos pasados.",
+    "idsAreasConocimiento": ["area005"]
+  },
+  {
+    "id": "dominio4",
+    "nombre": "Literatura",
+    "descripcion": "Arte de la expresión escrita y oral.",
+    "idsAreasConocimiento": ["area006", "area007"]
+  },
+  {
+    "id": "dominio5",
+    "nombre": "Biología",
+    "descripcion": "Ciencia que estudia los seres vivos.",
+    "idsAreasConocimiento": ["area008"]
+  }
+]

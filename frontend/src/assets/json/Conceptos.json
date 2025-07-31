@@ -1,0 +1,38 @@
+[
+  {
+    "id": "concepto1",
+    "titulo": "Variable",
+    "descripcion": "Símbolo que representa un valor desconocido en una ecuación.",
+    "idLeccion": null
+  },
+  {
+    "id": "concepto2",
+    "titulo": "Ecuación Lineal",
+    "descripcion": "Ecuación de primer grado con una o más variables.",
+    "idLeccion": null
+  },
+  {
+    "id": "concepto3",
+    "titulo": "Polinomio",
+    "descripcion": "Expresión algebraica formada por la suma de varios monomios.",
+    "idLeccion": null
+  },
+  {
+    "id": "concepto4",
+    "titulo": "Figura Geométrica",
+    "descripcion": "Forma definida por puntos, líneas y superficies en el espacio.",
+    "idLeccion": null
+  },
+  {
+    "id": "concepto5",
+    "titulo": "Fuerza",
+    "descripcion": "Magnitud física que puede cambiar el estado de movimiento de un objeto.",
+    "idLeccion": null
+  },
+  {
+    "id": "concepto6",
+    "titulo": "Reflexión de la Luz",
+    "descripcion": "Cambio de dirección de una onda al chocar con una superficie.",
+    "idLeccion": null
+  }
+]

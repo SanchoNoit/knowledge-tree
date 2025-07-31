@@ -1,0 +1,50 @@
+[
+  {
+    "id": "area001",
+    "nombre": "Álgebra",
+    "idsLecciones": ["leccion000001", "leccion000002"],
+    "idDominio": "dominio1"
+  },
+  {
+    "id": "area002",
+    "nombre": "Geometría",
+    "idsLecciones": ["leccion000003"],
+    "idDominio": "dominio1"
+  },
+  {
+    "id": "area003",
+    "nombre": "Mecánica",
+    "idsLecciones": ["leccion000004"],
+    "idDominio": "dominio2"
+  },
+  {
+    "id": "area004",
+    "nombre": "Óptica",
+    "idsLecciones": ["leccion000005"],
+    "idDominio": "dominio2"
+  },
+  {
+    "id": "area005",
+    "nombre": "Historia Antigua",
+    "idsLecciones": [],
+    "idDominio": "dominio3"
+  },
+  {
+    "id": "area006",
+    "nombre": "Poesía",
+    "idsLecciones": [],
+    "idDominio": "dominio4"
+  },
+  {
+    "id": "area007",
+    "nombre": "Narrativa",
+    "idsLecciones": [],
+    "idDominio": "dominio4"
+  },
+  {
+    "id": "area008",
+    "nombre": "Genética",
+    "idsLecciones": [],
+    "idDominio": "dominio5"
+  }
+]
