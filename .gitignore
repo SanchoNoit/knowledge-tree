@@ -31,3 +31,8 @@ frontend/*.sw?
 
 frontend/*.tsbuildinfo
 frontend/.prettierrc.json
+frontend/eslint.config.js
+frontend/jsconfig.json
+frontend/package-lock.json
+frontend/.vscode/extensions.json
+frontend/src/components/icons/ComputerScience.png
