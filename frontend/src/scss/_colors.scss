@@ -1,0 +1,53 @@
+/* Paleta base */
+$blue-600:   #2563eb; // primario
+$blue-400:   #60a5fa; // secundario
+$teal-500:   #14b8a6; // acento
+$red-500:    #ef4444; // peligro
+$yellow-400: #facc15; // advertencia
+$green-500:  #22c55e; // éxito
+
+$white:      #ffffff;
+$gray-900:   #18181b;
+$gray-700:   #3f3f46;
+$gray-500:   #71717a;
+$gray-300:   #d4d4d8;
+$gray-100:   #f4f4f5;
+
+/* Tokens semánticos */
+$color-primary:   $blue-600;
+$color-secondary: $blue-400;
+$color-accent:    $teal-500;
+
+$color-success:   $green-500;
+$color-warning:   $yellow-400;
+$color-danger:    $red-500;
+$color-info:      $blue-400;
+
+$bg-default:    $white;
+$bg-muted:      $gray-100;
+$surface:       $white;
+$surface-muted: $gray-100;
+
+$text-primary:   $gray-900;
+$text-secondary: $gray-700;
+$text-inverse:   $white;
+
+$border-color:   $gray-300;
+$focus-ring:     $color-accent;
+
+/* Tema oscuro */
+$dark-bg-default:    $gray-900;
+$dark-bg-muted:      $gray-700;
+$dark-surface:       $gray-700;
+$dark-surface-muted: $gray-500;
+
+$dark-text-primary:   $gray-100;
+$dark-text-secondary: $gray-300;
+$dark-text-inverse:   $gray-900;
+
+$dark-border-color:   $gray-500;
+$dark-focus-ring:     $color-accent;
+
+/* Helpers */
+@function tone($color, $amount) { @return mix(#000, $color, $amount); }
+@function tint($color, $amount) { @return mix(#fff, $color, $amount); }

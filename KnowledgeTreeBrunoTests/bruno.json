@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "KnowledgeTreeBrunoTests",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

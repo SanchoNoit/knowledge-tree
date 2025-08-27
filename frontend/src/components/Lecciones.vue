@@ -3,29 +3,47 @@ import { useLeccionesStore } from "@/stores/lecciones";
 import { mapState } from "pinia";
 
 export default {
-  props: ['areaClicada'],
+  props: ['temaClicado'],
   emits: ['leccion-clicada'],
 
+  data() {
+    return {
+      leccionClicada: null
+    };
+  },
+
   computed: {
-    ...mapState(useLeccionesStore, ["arrayLecciones"]),
-    leccionesDelAreaSeleccionada() {
-      if (this.areaClicada &&
-        Array.isArray(this.areaClicada.idsLecciones)) {
+    ...mapState(useLeccionesStore, ['arrayLecciones']),
+
+    leccionesDelTemaSeleccionado() {
+      if (this.temaClicado &&
+        Array.isArray(this.temaClicado.idsLecciones)) {
         return this.arrayLecciones.filter(
-          leccion => this.areaClicada.idsLecciones.includes(leccion.id)
+          leccion => this.temaClicado.idsLecciones.includes(leccion.id)
         );
       } else {
         return [];
       }
+    }
+  },
+
+  methods: {
+    definirLeccionClicada(leccion) {
+      this.leccionClicada = (this.leccionClicada && this.leccionClicada.id === leccion.id)
+        ? null
+        : leccion;
+      this.$emit('leccion-clicada', leccion);
     }
   }
 }
 </script>
 
 <template>
-  <div v-for="leccion in this.leccionesDelAreaSeleccionada" :key="leccion.id"
-    @click="$emit('leccion-clicada', leccion)">
-    <div class="card mb-3" id="carta">
+  <div v-for="leccion in this.leccionesDelTemaSeleccionado" :key="leccion.id" @click="definirLeccionClicada(leccion)">
+    <div class="card mb-3" :class="{
+      'card-activa': leccionClicada && leccionClicada.id === leccion.id,
+      'card-no-seleccionada': leccionClicada && leccionClicada.id !== leccion.id
+    }">
       <div class="row g-0">
         <div class="col-md-4">
           <img src="@/components/icons/ComputerScience.png" class="img-fluid rounded-start" alt="Imagen de la lección">

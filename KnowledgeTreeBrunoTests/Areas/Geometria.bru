@@ -1,0 +1,22 @@
+meta {
+  name: Geometria
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{url}}areas
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "nombre": "Geometría",
+    "dominio": "http://localhost:8080/api/dominios/1"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

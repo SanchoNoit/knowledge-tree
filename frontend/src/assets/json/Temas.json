@@ -1,0 +1,32 @@
+[
+  {
+    "id": "tema001",
+    "nombre": "Ecuaciones",
+    "idArea": "area001",
+    "idsLecciones": ["leccion000001"]
+  },
+  {
+    "id": "tema002",
+    "nombre": "Polinomios",
+    "idArea": "area001",
+    "idsLecciones": ["leccion000002"]
+  },
+  {
+    "id": "tema003",
+    "nombre": "Figuras Geométricas",
+    "idArea": "area002",
+    "idsLecciones": ["leccion000003"]
+  },
+  {
+    "id": "tema004",
+    "nombre": "Dinámica",
+    "idArea": "area003",
+    "idsLecciones": ["leccion000004"]
+  },
+  {
+    "id": "tema005",
+    "nombre": "Óptica Básica",
+    "idArea": "area004",
+    "idsLecciones": ["leccion000005"]
+  }
+]

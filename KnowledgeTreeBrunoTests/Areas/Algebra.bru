@@ -1,0 +1,22 @@
+meta {
+  name: Algebra
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}areas
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "nombre": "Álgebra",
+    "dominio": "http://localhost:8080/api/dominios/1"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

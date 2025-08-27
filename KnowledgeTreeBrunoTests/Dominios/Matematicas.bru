@@ -1,0 +1,22 @@
+meta {
+  name: Matematicas
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{url}}dominios
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "nombre": "Matemáticas",
+    "descripcion": "Ciencia que estudia los números y otras movidas"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

@@ -7,7 +7,8 @@ export default {
   data() {
     return {
       nombreDominioAgregado: '',
-      descripcionDominioAgreado: ''
+      descripcionDominioAgregado: '',
+      dominioClicado: null,
     }
   },
 
@@ -18,17 +19,27 @@ export default {
   },
 
   methods: {
-    ...mapActions(useDominiosConocimientoStore, ["addDominio"]),
+    ...mapActions(useDominiosConocimientoStore, ["addDominio", "cargarTodosLosDominios"]),
 
     agregarNuevoDominio() {
-      if (this.nombreDominioAgregado && this.descripcionDominioAgreado) {
+      if (this.nombreDominioAgregado && this.descripcionDominioAgregado) {
         this.addDominio({
           nombre: this.nombreDominioAgregado,
-          descripcion: this.descripcionDominioAgreado
+          descripcion: this.descripcionDominioAgregado
         });
         this.nombreDominioAgregado = '';
-        this.descripcionDominioAgreado = '';
+        this.descripcionDominioAgregado = '';
       }
+    },
+
+    definirDominioClicado(dominio) {
+      this.dominioClicado = dominio.id === this.dominioClicado?.id ? null : dominio;
+      this.$emit('dominio-clicado', dominio);
+    },
+
+    async cargarDominiosDesdeBaseDatos() {
+      await this.cargarTodosLosDominios();
+      console.log("Dominios cargados desde la base de datos");
     }
   }
 
@@ -37,8 +48,9 @@ export default {
 </script>
 
 <template>
-  <div v-for="dominio in this.arrayDominios" :key="dominio.id" @click="$emit('dominio-clicado', dominio)">
-    <div class="card mb-3" id="cartaDominio">
+  <div v-for="dominio in this.arrayDominios" :key="dominio.id" @click="definirDominioClicado(dominio)">
+    <div class="card mb-3"
+      :class="{ 'card-activa': dominioClicado && dominioClicado.id === dominio.id, 'card-no-seleccionada': dominioClicado && dominioClicado.id !== dominio.id }">
       <div class="row g-0">
         <div class="col-md-4">
           <img src="@/components/icons/ComputerScience.png" class="img-fluid rounded-start" alt="Imagen del dominio">
@@ -46,13 +58,19 @@ export default {
         <div class="col-md-8">
           <div class="card-body">
             <h5 class="card-title"> {{ dominio.nombre }}</h5>
-            <p class="card-text">{{ dominio.descripcion }}</p>
-            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+            <p class="card-text text-end">
+              Aquí van iconos del CRUD
+            </p>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Cargar dominios desde BBDD -->
+  <button class="btn btn-secondary" @click="cargarDominiosDesdeBaseDatos">
+    Cargar dominios desde la BBDD
+  </button>
 
   <!-- Button trigger modal -->
   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAgregarDominio">
@@ -61,7 +79,7 @@ export default {
 
   <!-- Modal -->
   <div class="modal fade" id="modalAgregarDominio" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1"
-    aria-labelledby="modalAgregarDominioLabel" aria-hidden="true">
+    aria-labelledby="modalAgregarDominioLabel">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -84,7 +102,7 @@ export default {
               <label for="validacionDeDescripcion" class="form-label">Descripción</label>
               <textarea class="form-control" id="validacionDeDescripcion"
                 placeholder="Ej. Ciencia que estudia las propiedades de la materia y la energía." rows="3"
-                v-model="descripcionDominioAgreado" required />
+                v-model="descripcionDominioAgregado" required></textarea>
               <div class="valid-feedback">
                 ¡De acuerdo!
               </div>
@@ -101,9 +119,3 @@ export default {
 
 
 </template>
-
-<style scoped>
-#cartaDominio {
-  max-width: 540px
-}
-</style>

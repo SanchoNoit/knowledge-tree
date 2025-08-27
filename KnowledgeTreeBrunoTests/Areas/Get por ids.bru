@@ -1,0 +1,19 @@
+meta {
+  name: Get por ids
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{url}}areas?ids=[1]
+  body: none
+  auth: inherit
+}
+
+params:query {
+  ids: [1]
+}
+
+settings {
+  encodeUrl: true
+}

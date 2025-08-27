@@ -1,10 +1,12 @@
 <script>
-import NavBar from '@/components/NavBar.vue';
+import NavBar from '@/components/navegacion/NavBar.vue';
+import Footer from '@/components/navegacion/Footer.vue';
 
 export default {
   name: 'App',
   components: {
-    NavBar
+    NavBar,
+    Footer
   }
 };
 </script>
@@ -17,19 +19,21 @@ export default {
     <router-view />
   </div>
   <div id="footer">
-
+    <Footer />
   </div>
 
 </template>
 
-<style scoped>
+<style lang="scss">
+@import "@/scss/_colors.scss";
+
 #main {
   margin: 0;
   padding: 0;
   font-family:
     -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  background-color: #c518f5;
-  color: #18f5a5;
+  background-color: $bg-default;
+  color: $text-primary;
 }
 </style>

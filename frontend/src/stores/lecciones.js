@@ -8,7 +8,7 @@ class Leccion {
     this.contenido = contenido ?? 'Descripción de la lección'
     this.completada = completada ?? false
     this.idConceptos = conceptos ?? []
-    this.idArea = []
+    this.idTema = []
   }
 }
 

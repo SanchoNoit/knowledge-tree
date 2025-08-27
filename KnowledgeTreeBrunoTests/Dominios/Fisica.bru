@@ -1,0 +1,22 @@
+meta {
+  name: Fisica
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}dominios
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "nombre": "Física",
+    "descripcion": "Estudio del movimiento y la energía"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

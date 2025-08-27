@@ -1,0 +1,22 @@
+meta {
+  name: Historia
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{url}}dominios
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "nombre": "Historia",
+    "descripcion": "Estudio de lo que fué"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

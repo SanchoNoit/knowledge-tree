@@ -5,7 +5,7 @@
     "contenido": "Introducción y resolución de ecuaciones lineales.",
     "completada": false,
     "idConceptos": ["concepto1", "concepto2"],
-    "idArea": "area001"
+    "idTema": "tema001"
   },
   {
     "id": "leccion000002",
@@ -13,7 +13,7 @@
     "contenido": "Definición y operaciones con polinomios.",
     "completada": false,
     "idConceptos": ["concepto3"],
-    "idArea": "area001"
+    "idTema": "tema002"
   },
   {
     "id": "leccion000003",
@@ -21,7 +21,7 @@
     "contenido": "Clasificación y propiedades de figuras geométricas.",
     "completada": false,
     "idConceptos": ["concepto4"],
-    "idArea": "area002"
+    "idTema": "tema003"
   },
   {
     "id": "leccion000004",
@@ -29,7 +29,7 @@
     "contenido": "Estudio de las fuerzas y el movimiento.",
     "completada": false,
     "idConceptos": ["concepto5"],
-    "idArea": "area003"
+    "idTema": "tema004"
   },
   {
     "id": "leccion000005",
@@ -37,6 +37,6 @@
     "contenido": "Principios básicos de la óptica y la reflexión de la luz.",
     "completada": false,
     "idConceptos": ["concepto6"],
-    "idArea": "area004"
+    "idTema": "tema005"
   }
 ]

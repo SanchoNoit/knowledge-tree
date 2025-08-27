@@ -1,0 +1,22 @@
+meta {
+  name: Filosofia
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{url}}dominios
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "nombre": "Filosofía",
+    "descripcion": "Estudio de la experiencia humana"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,22 @@
+meta {
+  name: Grupos
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{url}}areas
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "nombre": "Teoría de grupos",
+    "dominio": "http://localhost:8080/api/dominios/1"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

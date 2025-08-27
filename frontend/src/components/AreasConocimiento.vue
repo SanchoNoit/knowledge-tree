@@ -8,7 +8,8 @@ export default {
 
   data() {
     return {
-      nombreAreaAgregada: ''
+      nombreAreaAgregada: '',
+      areaClicada: null,
     }
   },
 
@@ -33,6 +34,11 @@ export default {
     agregarNuevaArea() {
       this.addArea(this.nombreAreaAgregada, this.dominioClicado.id, null);
       this.nombreAreaAgregada = ""
+    },
+
+    definirAreaClicada(area) {
+      this.areaClicada = area.id === this.areaClicada?.id ? null : area;
+      this.$emit('area-clicada', area);
     }
   }
 
@@ -41,8 +47,11 @@ export default {
 </script>
 
 <template>
-  <div v-for="area in this.areasDelDominioSeleccionado" :key="area.id" @click="$emit('area-clicada', area)">
-    <div class="card mb-3" id="carta">
+  <div v-for="area in this.areasDelDominioSeleccionado" :key="area.id" @click="definirAreaClicada(area)">
+    <div class="card mb-3" :class="{
+      'card-activa': areaClicada && areaClicada.id === area.id,
+      'card-no-seleccionada': areaClicada && areaClicada.id !== area.id
+    }">
       <div class="row g-0">
         <div class="col-md-4">
           <img src="@/components/icons/ComputerScience.png" class="img-fluid rounded-start"
@@ -88,14 +97,14 @@ export default {
               <!-- Descripción del area -->
               <label for="validacionDeArea" class="form-label">Descripción del area</label>
               <textarea class="form-control" id="validacionDeDescripcion"
-                placeholder="TIENES QUE IMPLEMENTAR LA DESCRIPCIÓN DEL ÁREA DE CONOCIMIENTO" rows="3" required />
+                placeholder="TIENES QUE IMPLEMENTAR LA DESCRIPCIÓN DEL ÁREA DE CONOCIMIENTO" rows="3"
+                required></textarea>
               <div class="valid-feedback">
                 ¡De acuerdo!
               </div>
             </div>
             <div class="col-12">
-              <button class="btn btn-primary" type="submit" data-bs-dismiss="modal">Agregar
-                area</button>
+              <button class="btn btn-primary" type="submit" data-bs-dismiss="modal">Agregar area</button>
             </div>
           </form>
         </div>
@@ -103,9 +112,3 @@ export default {
     </div>
   </div>
 </template>
-
-<style scoped>
-#carta {
-  max-width: 540px
-}
-</style>
