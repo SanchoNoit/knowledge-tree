@@ -1,38 +1,48 @@
-frontend/.editorconfig
-
-# Logs
-frontend/logs
-frontend/*.log
-frontend/npm-debug.log*
-frontend/yarn-debug.log*
-frontend/yarn-error.log*
-frontend/pnpm-debug.log*
-frontend/lerna-debug.log*
-
+# FRONTEND
 frontend/node_modules
-frontend/.DS_Store
 frontend/dist
 frontend/dist-ssr
 frontend/coverage
+frontend/logs
+frontend/*.log
 frontend/*.local
-
+frontend/.DS_Store
 frontend/cypress/videos/
 frontend/cypress/screenshots/
-
-# Editor directories and files
+frontend/.idea
 frontend/.vscode/*
 !frontend/.vscode/extensions.json
-frontend/.idea
+frontend/package-lock.json
+
+# Ignorar archivos temporales y de configuración
 frontend/*.suo
 frontend/*.ntvs*
 frontend/*.njsproj
 frontend/*.sln
 frontend/*.sw?
-
 frontend/*.tsbuildinfo
 frontend/.prettierrc.json
 frontend/eslint.config.js
 frontend/jsconfig.json
-frontend/package-lock.json
-frontend/.vscode/extensions.json
+
+# Ignorar iconos y archivos generados
 frontend/src/components/icons/ComputerScience.png
+
+# BACKEND
+backend/.gradle/
+backend/build/
+backend/bin/
+backend/logs/
+backend/.idea
+backend/.vscode/
+backend/.classpath
+backend/.project
+backend/.settings/
+backend/*.iml
+
+# Ignorar archivos temporales globales
+*.log
+*.tmp
+*.swp
+.DS_Store
+backend/gradle/wrapper/gradle-wrapper.jar
